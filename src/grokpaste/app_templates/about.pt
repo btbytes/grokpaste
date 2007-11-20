@@ -1,0 +1,30 @@
+<html metal:use-macro="context/@@layout/main">
+<div metal:fill-slot="headercontrols">
+	<h1>
+		<a tal:attributes="href view/application_url">&#8227; Back</a>
+	</h1>
+</div>
+
+<div id="about" metal:fill-slot="content">
+<div style="padding: 0 15px 15px 15px; border: 1px solid #888; margin: 0 0 10px 20px; background: #fff; width: 250px; float: right">
+<h4 style="margin-bottom: 6px">0 pastes in the last 30 days</h4>
+<table style="margin: 10px; padding: 0; color: #667">
+<tr><td style="border-bottom: 1px solid #aaa">Plain&nbsp;</td>
+<td style="border-bottom: 1px solid #aaa; text-align: right; font-weight: bold">&nbsp;000 (TODO)</td></tr>
+</table>
+<p style="padding: 0; margin: 5px;"><a tal:attributes="href view/application_url">&#8227; Add yours</a></P>
+</div>
+<div style="padding: 0 15px 15px 15px; border: 1px solid #888; margin: 0 0 10px 20px; background: #fff; width: 250px; float: right; clear:both">
+<h4>Recent site updates</h4>
+
+<p><strong>Nov 18th</strong> [r1]: Initial Release.</p>
+</div>
+<h3>Overview</h3>
+<p>GrokPaste is a pastebin application which allows developers to exchange code snippets. 
+	Grokpaste uses <a href="http://www.pygments.org">pygments</a> to provide syntax highlighting.
+I have used <a href="http://dpaste.com">dpaste.com</a>'s layout and styling.	
+</p>
+<p>My intention of creating GrokPaste was to demonstrate the ease of developing with <a href="http://grok.zope.org">Grok</a>, as well as learn Grok/Zope3 technologies. </p>
+
+</div>
+</html>

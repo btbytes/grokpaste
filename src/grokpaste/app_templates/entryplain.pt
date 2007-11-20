@@ -1,0 +1,6 @@
+<html metal:use-macro="context/@@index/pasties">
+<textarea metal:fill-slot="render" 
+	tal:content="python:context.text" 
+	name="plaintext"
+	cols="80" rows="40"></textarea>
+</html>

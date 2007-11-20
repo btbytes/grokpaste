@@ -1,0 +1,31 @@
+<html metal:define-macro="pasties" 
+	metal:extend-macro="context/@@layout/main">
+<div metal:fill-slot="headertitle">
+	<div metal:define-slot="headertitle">
+	<h1 style="float: left">		
+			<a tal:attributes="href python:view.url('index')">
+				<em tal:omit-tag tal:replace="python:context.__name__">Example</em>
+			</a>  
+		 <span tal:condition="python:context.title">pasted by <em tal:content="python:context.name"> Nobody</em></span>, 
+		<span tal:content="python:context.created.strftime('%I:%M %p %b-%e')"></span><br/>
+	</h1>
+	</div>
+</div>
+
+<div metal:fill-slot="headercontrols">
+	<h1><a tal:attributes="href view/application_url" title="paste a new item">&#8227; New</a></h1>
+</div>
+
+<div id="paste" metal:fill-slot="content">
+	<div tal:omit-tag class="controlbar" metal:define-slot="content">
+	    <div class="language">Syntax: <strong metal:define-slot="language" tal:content="context/syntax"></strong></div>   
+	    <div class="controls">&nbsp;&nbsp;&nbsp;
+	    <a tal:attributes="href python:view.url('plain')" title="see plaintext version">&#8227; Plain</a>&nbsp;&nbsp;
+	    <a tal:attributes="href python:view.url('html')" title="self-contained HTML snippet (for your blog etc.)">&#8227; HTML</a>&nbsp;&nbsp;
+	    <!-- a tal:attributes="href python:view.url('copy')" title="make a new paste based on this one">&#8227; Copy</a -->
+	    </div>
+	</div>
+	<div metal:define-slot="render" tal:content="structure python:context.render_text()" id="rendered_text"></div>
+</div>
+
+</html>

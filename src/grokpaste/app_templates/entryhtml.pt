@@ -1,0 +1,3 @@
+<html metal:use-macro="context/@@index/pasties">
+<textarea metal:fill-slot="render" tal:content="python:context.render_html()" ></textarea>
+</html>

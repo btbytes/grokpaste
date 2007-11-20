@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en" metal:define-macro="main">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title metal:define-slot="title">GrokPaste</title>
+<link rel="stylesheet" tal:attributes="href static/main.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" tal:attributes="href static/pygments_style.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body onload='document.pasteform.id_content.focus()'>
+<div id="topbar">
+	<h1 tal:omit-tag metal:define-slot="headertitle">GrokPaste</h1>
+	<div id="headercontrols">
+		<div tal:omit-tag metal:define-slot="headercontrols">
+			<h1>(Here is an <a tal:attributes="href python:view.application_url()+'/example'">example</a>)</h1>    
+		</div>
+	</div>
+</div><!-- topbar -->
+
+<div id="content">
+<div metal:define-slot="content"></div>
+</div><!-- content -->
+
+<div id="bug">
+<a tal:attributes="href python:view.application_url()+'/about'">&#8227; About this site</a>
+</div>
+
+</body>
+</html>
