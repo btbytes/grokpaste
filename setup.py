@@ -10,7 +10,7 @@ setup(name='GrokPaste',
 """,
       # Get strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[], 
-      keywords="grok, zope3, pastebin",
+      keywords="grok, zope3, pastebin, pygments, paste",
       author="Pradeep Kishore Gowda",
       author_email="pradeep@btbytes.com",
       url="http://www.btbytes.com",
