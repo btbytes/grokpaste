@@ -1,7 +1,2 @@
-from pygments import highlight
-from pygments.lexers import get_lexer_by_name
-from pygments.formatters import HtmlFormatter
-
-lexer = get_lexer_by_name("python", stripall=True)
-formatter = HtmlFormatter(linenos=True, cssclass="source")
-result = highlight(code, lexer, formatter)
+GrokPaste is a pastebin application written using Grok.
+GrokPaste is inspired by http://dpaste.com. It is also intended to act as a tutorial application for developers venturing into Zope3 and Grok technologies. 
