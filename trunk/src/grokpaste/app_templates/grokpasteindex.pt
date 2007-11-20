@@ -1,0 +1,37 @@
+<html metal:use-macro="context/@@layout/main">
+
+
+<div metal:fill-slot="content">
+	<!-- Linking to recent entries is disabled to prevent spambots from misusing the app -->
+	<div style="padding: 0 15px 15px 15px; border: 1px solid #888; margin: 0 0 10px 20px; background: #fff; width: 250px; float: right">
+	<h4>Existing entries</h4>
+	  <ul>
+	    <li tal:repeat="key python:context.keys()">
+	      <a tal:attributes="href python:view.url(key)" 
+	         tal:content="python:context[key].title"></a>
+	    </li>
+	  </ul>
+	</div>
+<form tal:attributes="action view/url" method="post" id="pasteform">
+<table>
+	<tr><td align="right"><label for="id_content">Code</label></td><td><textarea id="id_content" class="vLargeTextField required" name="text" rows="10" cols="40"></textarea></td></tr>
+	<tr><td align="right"><label for="id_syntax">Syntax</label></td><td>
+		<select id="id_syntax" class="vSelectField" name="syntax" size="1" >
+		<div tal:omit-tag tal:repeat="opt view/languages" >
+		<option tal:attributes="value opt" selected="selected" 
+		tal:content="python:opt.capitalize()"
+		tal:condition="python:opt==view.userinfo['syntax']"></option>	
+		<option tal:attributes="value opt" tal:content="python:opt.capitalize()"></option>		
+		</div>
+		</select>
+	</td></tr>
+	<tr><td align="right"><label for="id_title">Title</label></td><td><input type="text" id="id_title" class="vTextField" name="title" size="30" value="" maxlength="50" /></td></tr>
+	<tr><td align="right"><label for="id_name">Name/Email</label></td><td><input type="text" id="id_name" class="vTextField" name="name" size="30" maxlength="30" tal:attributes="value view/userinfo/name"/></td></tr>
+	<tr><td align="right"><label for="id_hold">Hold</label></td><td><input type="checkbox" id="id_hold" class="vCheckboxField" name="hold" /></td></tr>
+	<tr><td></td><td><input type="submit" id="submit" value="Paste it" /></td></tr>
+</table>
+</form>
+
+<p class='note'><em>All fields except "Code" are optional.</em></p>
+</div>
+</html>
