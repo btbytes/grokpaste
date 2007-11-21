@@ -25,3 +25,4 @@ TODO
  * Hold pastes if ``Hold`` Option is enabled.
  * ``Copy`` existing paste to a new paste and edit.
  * Shorter URLs, on the lines of reddit (eg: http://app_url/60zd3).
+ * Summary report of pastes by language
